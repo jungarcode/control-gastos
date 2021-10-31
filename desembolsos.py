@@ -51,7 +51,7 @@ class Presupuesto:
         self.entrymon1.grid(row=2,column=1,padx=10,pady=5)
         self.botoncarga=ttk.Button(self.labelframe1, text="Cargar",command=self.cargarGasto)
         self.botoncarga.grid(row=3,column=1,padx=5,pady=5)
-        imagen=ImageTk.PhotoImage(Image.open("/home/jungar/Escritorio/Python/gastos/Proyectos/imagenes/gastos.png"))
+        imagen=ImageTk.PhotoImage(Image.open("./imagenes/gastos.png"))
         labelimg=Label(self.pagina1, image = imagen)
         labelimg.grid(row=2,column=0,columnspan=2,sticky="ew",padx=65,pady=30)
         
@@ -211,7 +211,7 @@ class Presupuesto:
         self.entrysuma.grid(row=2,column=1,padx=10,pady=10) 
         self.botonsuma=ttk.Button(self.labelframe6,text="sumar",command=self.sumar)
         self.botonsuma.grid(row=3,column=1,padx=10,pady=10) 
-        imagen1=ImageTk.PhotoImage(Image.open("/home/jungar/Escritorio/Python/gastos/Proyectos/imagenes/img"))
+        imagen1=ImageTk.PhotoImage(Image.open("./imagenes/img"))
         labelimg=Label(self.pagina6, image = imagen1)
         labelimg.grid(row=2,column=0,columnspan=2,sticky="ew",padx=200)  
     
