@@ -137,7 +137,7 @@ class Presupuesto:
         self.cuaderno1.add(self.pagina4,text="Modificar o Borrar")
         self.labelframe4= LabelFrame(self.pagina4,text="Modificar",bg="cyan2",font=("Arial"),bd=5)
         self.labelframe4.grid(row=0,column=0,padx=120,pady=20)
-        self.labelmod1=Label(self.labelframe4,text="Codigo:",bg="cyan2")
+        self.labelmod1=Label(self.labelframe4,text="Id:",bg="cyan2")
         self.labelmod1.grid(row=0,column=0,padx=20,pady=10,sticky="e")
         self.codigomod=StringVar()
         self.entrycodigomod=Entry(self.labelframe4,textvariable=self.codigomod)
@@ -157,7 +157,7 @@ class Presupuesto:
         
         self.labelframe5= LabelFrame(self.pagina4,text="Borrado",bg="cyan2",font=("Arial"),bd=5)
         self.labelframe5.grid(row=1,column=0,padx=120,pady=50)
-        self.labelbora=Label(self.labelframe5,text="Codigo:",bg="cyan2")
+        self.labelbora=Label(self.labelframe5,text="Id:",bg="cyan2")
         self.labelbora.grid(row=0,column=0,padx=20,pady=10,sticky="e")
         self.codigobor=StringVar()
         self.entrybor=Entry(self.labelframe5,textvariable=self.codigobor)
@@ -172,6 +172,8 @@ class Presupuesto:
         cantidad = self.gasto1.baja(datos)
         if cantidad==1:
             mb.showinfo("Informacion","Se borro el gasto con dicho codigo")
+            self.codigobor.set("")
+            self.entrybor.focus()
         else:
             mb.showinfo("Informacion","No existe el gasto con dicho codigo")
             
@@ -183,6 +185,10 @@ class Presupuesto:
         cantidad = self.gasto1.modificacion(datos)
         if cantidad==1:
             mb.showinfo("informacion","se modifico el gasto")
+            self.nombremod.set("")
+            self.montomod.set("")
+            self.codigomod.set("")
+            self.entrycodigomod.focus()
         else:
             mb.showinfo("informacion","no existe el gasto con dicho codigo")
             
